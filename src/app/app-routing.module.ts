@@ -1,9 +1,11 @@
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { TemaComponent } from './tema/tema.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 
 const routes: Routes = [
 
@@ -13,7 +15,11 @@ const routes: Routes = [
   {path:'cadastrar', component:CadastrarComponent},
 
   {path: 'inicio', component: InicioComponent},
-  {path: 'tema', component: TemaComponent }
+  {path: 'tema', component: TemaComponent },
+
+  {path:'tema-edit/:id', component: TemaEditComponent},
+  {path: 'tema-delete/:id', component: TemaDeleteComponent}
+
 
 ];
 
