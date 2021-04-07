@@ -4,7 +4,7 @@ import { UserLogin } from './../model/UserLogin';
 import { User } from './../model/User';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, ObservableInput } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +35,9 @@ export class AuthService {
     }
 
     return ok
+  }
+  atualizar(user: User): Observable<User>{
+    return this.http.put<User>(`http://localhost:8080/usuarios`, user, {headers:{'Authorization': environment.token}})
   }
 
 }
